@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+.usersContainer{
+    display: flex;
+    gap: 30px;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cardUserContainer{
+    text-align: center;
+    width:20%;
+    border: 1px solid rgb(197, 197, 197);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1)
+}
+.cardUserContainer p {
+    font-size: 19px;
+}
+.cardUserContainer img {
+    height: 150px;
+    margin-top: 30px;
+}

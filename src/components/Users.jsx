@@ -35,7 +35,7 @@ export default function Users() {
         setUsers((prevUserList) => [...prevUserList, newUser]);
       };
   return (
-    <div>
+    <div className='container'>
         <AddUserForm onAddUser={addUser} />
       <h1>Liste des utilisateurs</h1>
       <div className='usersContainer'>

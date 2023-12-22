@@ -25,33 +25,48 @@ export default function AddUserForm({ onAddUser }) {
         });
         setPopinVisible(false);
       };
-
+      const handleCancelClick = () => {
+        setNewUser({
+          lastName: '',
+          firstName: '',
+          age: '',
+          gender: 'Male',
+        });
+        setPopinVisible(false);
+      };
     return (
         <div className='formAddUserContainer'>
-            <button onClick={handleButtonClick}>Add user</button>
+            <button className='btnAddUser btnPopAddUser' onClick={handleButtonClick}>Add user</button>
             {isPopinVisible && (
+                <>
+                <div className="overlay active"></div>
                 <div className="popin">
-                    <form onSubmit={handleFormSubmit}>
-                        <label>Nouveau Utilisateur :</label>
+                    <form className="formAddUser"onSubmit={handleFormSubmit}>
+                        <h1>Ajouter utilisateur</h1>
                         <input
                             type="text"
                             placeholder="Last Name"
                             value={newUser.lastName}
+                            required
                             onChange={(e) => setNewUser({ ...newUser, lastName: e.target.value })}
                         />
+                        <label>First Name</label>
                         <input
                             type="text"
                             placeholder="First Name"
                             value={newUser.firstName}
+                            required
                             onChange={(e) => setNewUser({ ...newUser, firstName: e.target.value })}
                         />
+                         <label>Last Name</label>
                         <input
                             type="number"
                             placeholder="Âge"
+                            required
                             value={newUser.age}
                             onChange={(e) => setNewUser({ ...newUser, age: e.target.value })}
                         />
-                        <label>Genre :</label>
+                        <label>Genre</label>
                         <select
                             value={newUser.gender}
                             onChange={(e) => setNewUser({ ...newUser, gender: e.target.value })}
@@ -59,10 +74,13 @@ export default function AddUserForm({ onAddUser }) {
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                         </select>
-                        <button type="submit">Ajouter</button>
+                        <button className="btn btnAddUser"type="submit">Ajouter</button>
+                        <button className="btn btnCancel"type="button" onClick={handleCancelClick}>Cancel</button>
                     </form>
                 </div>
+                </>
             )}
         </div>
+       
     );
 }
