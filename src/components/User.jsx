@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../styles/User.css';
 import EditUserForm from './EditUserForm';
 import '../styles/UserForm.css';
-export default function User({ user, onUpdateUser }) {
+export default function User({ user, onUpdateUser, onDeleteUser }) {
   const [isEditing, setIsEditing] = useState(false);
 
   const startEditing = () => {
@@ -27,6 +27,10 @@ export default function User({ user, onUpdateUser }) {
             cancelEditing();
           }}
           onCancelEdit={cancelEditing}
+          onDeleteUser={(deleteUser) => {
+            onDeleteUser(user.id, deleteUser);
+            cancelEditing();
+          }}
         />
         </>
       )}

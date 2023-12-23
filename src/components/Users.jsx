@@ -40,6 +40,9 @@ export default function Users() {
       prevUserList.map((user) => (user.id === userId ? { ...user, ...editedUser } : user))
     );
   };
+  const deleteUser = (userId) => {
+    setUsers((prevUserList) => prevUserList.filter((user) => user.id !== userId));
+  };
 
   return (
     <div className='container'>
@@ -47,7 +50,10 @@ export default function Users() {
       <h1>Liste des utilisateurs</h1>
       <div className='usersContainer'>
         {users.map((user, index) => (
-          <User key={index} user={user} onUpdateUser={updateUser} />
+          <User key={index} 
+          user={user} 
+          onUpdateUser={updateUser} 
+          onDeleteUser={deleteUser}  />
         ))}
       </div>
     </div>

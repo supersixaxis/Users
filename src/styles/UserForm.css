@@ -35,6 +35,13 @@
     width: 90%;
     padding: 5px;
 }
+.formAddUser label {
+    margin-top: 10px;
+}
+.formAddUser select {
+    width: 50%;
+    padding: 5px;
+}
 .formAddUser select {
     margin-bottom: 30px;
     margin-top: 10px;
@@ -56,8 +63,13 @@
     color: white;
     border: 0px;
 }
-.btnCancel{
+.btnDelete{
     background-color: red;
+    color: white;
+    border: 0px;
+}
+.btnCancel{
+    background-color:grey;
     color: white;
     border: 0px;
 }

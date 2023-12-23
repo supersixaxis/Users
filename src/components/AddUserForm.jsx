@@ -42,7 +42,7 @@ export default function AddUserForm({ onAddUser }) {
                 <div className="overlay active"></div>
                 <div className="popin">
                     <form className="formAddUser"onSubmit={handleFormSubmit}>
-                        <h1>Ajouter utilisateur</h1>
+                        <h1>Add user</h1>
                         <input
                             type="text"
                             placeholder="Last Name"
@@ -74,7 +74,7 @@ export default function AddUserForm({ onAddUser }) {
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                         </select>
-                        <button className="btn btnAddUser"type="submit">Ajouter</button>
+                        <button className="btn btnAddUser"type="submit">Add</button>
                         <button className="btn btnCancel"type="button" onClick={handleCancelClick}>Cancel</button>
                     </form>
                 </div>
